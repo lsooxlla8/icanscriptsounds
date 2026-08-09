@@ -1,8 +1,8 @@
 -- @description Toggle Toolbar at Top
 -- @author icanseesounds
--- @version 1.2.0
+-- @version 1.2.1
 -- @changelog
---   Restore the previously focused window after switching toolbars
+--   Always switch the toolbar at the top instead of the last focused toolbar
 -- @about
 --   Switches any toolbar positioned at the top of the main window to the
 --   configured target toolbar, then back to the previous toolbar.
@@ -165,8 +165,26 @@ local function switch_focused_toolbar(
   reaper.defer(function()
     reaper.JS_Window_SetFocus(toolbar_window)
 
-    -- Run on the following UI cycle so REAPER has registered the toolbar as
-    -- the focused target before handling the native switch action.
+    -- REAPER chooses which toolbar to switch from its last mouse context, not
+    -- only from keyboard focus. A synthetic click on the window border makes
+    -- this toolbar the target without moving the pointer or pressing a button.
+    reaper.JS_WindowMessage_Send(
+      toolbar_window,
+      "WM_LBUTTONDOWN",
+      1,
+      0,
+      0,
+      0
+    )
+    reaper.JS_WindowMessage_Send(
+      toolbar_window,
+      "WM_LBUTTONUP",
+      0,
+      0,
+      0,
+      0
+    )
+
     reaper.defer(function()
       reaper.Main_OnCommand(command_id, 0)
 
@@ -206,6 +224,7 @@ local function main()
     or not reaper.JS_Window_GetForeground
     or not reaper.JS_Window_SetFocus
     or not reaper.JS_Window_SetForeground
+    or not reaper.JS_WindowMessage_Send
   then
     show_error("This script requires js_ReaScriptAPI.")
     return
