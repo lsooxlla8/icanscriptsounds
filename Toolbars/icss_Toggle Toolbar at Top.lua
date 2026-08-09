@@ -1,11 +1,12 @@
 -- @description Toggle Toolbar at Top
 -- @author icanseesounds
--- @version 1.1.0
+-- @version 1.2.0
 -- @changelog
---   Initial ReaPack release
+--   Restore the previously focused window after switching toolbars
 -- @about
 --   Switches any toolbar positioned at the top of the main window to the
 --   configured target toolbar, then back to the previous toolbar.
+--   Restores the window focus that was active before the script ran.
 --
 --   Requires js_ReaScriptAPI.
 
@@ -155,7 +156,9 @@ end
 local function switch_focused_toolbar(
   toolbar_window,
   main_window,
-  command_id
+  command_id,
+  previous_foreground,
+  previous_focus
 )
   reaper.JS_Window_SetForeground(main_window)
 
@@ -166,6 +169,22 @@ local function switch_focused_toolbar(
     -- the focused target before handling the native switch action.
     reaper.defer(function()
       reaper.Main_OnCommand(command_id, 0)
+
+      -- Restore the previous top-level window first, then its focused child
+      -- after REAPER has completed the toolbar switch.
+      reaper.defer(function()
+        if previous_foreground
+          and reaper.JS_Window_IsWindow(previous_foreground)
+        then
+          reaper.JS_Window_SetForeground(previous_foreground)
+        end
+
+        reaper.defer(function()
+          if previous_focus and reaper.JS_Window_IsWindow(previous_focus) then
+            reaper.JS_Window_SetFocus(previous_focus)
+          end
+        end)
+      end)
     end)
   end)
 end
@@ -182,6 +201,9 @@ local function main()
   if not reaper.JS_Window_Find
     or not reaper.JS_Window_GetRect
     or not reaper.JS_Window_IsVisible
+    or not reaper.JS_Window_IsWindow
+    or not reaper.JS_Window_GetFocus
+    or not reaper.JS_Window_GetForeground
     or not reaper.JS_Window_SetFocus
     or not reaper.JS_Window_SetForeground
   then
@@ -237,7 +259,16 @@ local function main()
     return
   end
 
-  switch_focused_toolbar(toolbar_window, main_window, command_id)
+  local previous_foreground = reaper.JS_Window_GetForeground()
+  local previous_focus = reaper.JS_Window_GetFocus()
+
+  switch_focused_toolbar(
+    toolbar_window,
+    main_window,
+    command_id,
+    previous_foreground,
+    previous_focus
+  )
 end
 
 main()
