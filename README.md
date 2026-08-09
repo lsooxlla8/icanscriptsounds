@@ -50,3 +50,13 @@ Toggles the FX window of the selected track:
 
 The script supports normal tracks, the master track, FX chains, floating FX,
 and empty FX chains.
+
+### Toggle Toolbar at Top
+
+Toggles the toolbar positioned at the top of the main window:
+
+- any current toolbar → the configured target toolbar;
+- target toolbar → the previously active toolbar.
+
+Set `TARGET_TOOLBAR` in the script to a toolbar number from 1 to 32. The
+script requires [js_ReaScriptAPI](https://forum.cockos.com/showthread.php?t=212174).
