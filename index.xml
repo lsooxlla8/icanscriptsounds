@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="29bce53a48736855679d483e2996eb0a8344374a">
+<index version="1" name="icanscriptsounds" commit="f87d722439638cffd39ca28c0388f8851c363f6e">
   <category name="Tracks">
     <reapack name="icss_Freeze Toggle.lua" type="script" desc="Freeze Toggle">
       <metadata>
@@ -35,7 +35,7 @@
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles the freeze state of every selected track.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Unfrozen track: measure a safe post-FX tail, then freeze to stereo.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Unfrozen track: measures the real frozen output, then freezes natively with five seconds of confirmed silence after the audible tail.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Frozen track: unfreezes one freeze layer.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mixed multi-track selections are processed independently.\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Requires the free SWS/S&M extension.\par}
@@ -49,6 +49,10 @@
       <version name="1.0.1" author="icanseesounds" time="2026-07-28T20:54:11Z">
         <changelog><![CDATA[Simplify the ReaPack description]]></changelog>
         <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/29bce53a48736855679d483e2996eb0a8344374a/Tracks/icss_Smart%20Freeze%20Toggle.lua</source>
+      </version>
+      <version name="2.1.0" author="icanseesounds" time="2026-08-09T12:17:34Z">
+        <changelog><![CDATA[Set silence 66 dB below the loudest pre-tail 50 ms RMS window]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/f87d722439638cffd39ca28c0388f8851c363f6e/Tracks/icss_Smart%20Freeze%20Toggle.lua</source>
       </version>
     </reapack>
     <reapack name="icss_Smart Toggle FX Window.lua" type="script" desc="Smart Toggle FX Window">
@@ -101,6 +105,7 @@ ReaPack
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? measure a safe post-FX tail, then freeze to stereo;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab frozen track \u8594 ? unfreeze one freeze layer.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The silence threshold is set 66 dB below the loudest 50 ms RMS window before the tail, and the final Freeze keeps five continuous seconds of silence.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 The script safely handles mixed selections and requires the {\field{\*\fldinst{HYPERLINK "https://www.sws-extension.org/"}}{\fldrslt{\ul
 SWS/S&M extension
 }}}
