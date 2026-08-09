@@ -106,25 +106,18 @@ ReaPack
 }}}
 .\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Install with ReaPack\par}
-{\pard \ql \f0 \sa180 \li360 \fi-360 1.\tx360\tab In REAPER, open {\f1 Extensions > ReaPack > Import repositories...}.\par}
-{\pard \ql \f0 \sa180 \li360 \fi-360 2.\tx360\tab Paste this URL:\par}
-{\pard \ql \f0 \sa180 \li360 \fi0 \f1 https://raw.githubusercontent.com/lsooxlla8/icanscriptsounds/main/index.xml\par}
-{\pard \ql \f0 \sa180 \li360 \fi-360 3.\tx360\tab Synchronize packages.\par}
-{\pard \ql \f0 \sa180 \li360 \fi-360 4.\tx360\tab Open {\f1 Extensions > ReaPack > Browse packages...}.\par}
-{\pard \ql \f0 \sa180 \li360 \fi-360 5.\tx360\tab Find and install the desired script.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Installed scripts are registered in REAPER's Action List.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://raw.githubusercontent.com/lsooxlla8/icanscriptsounds/main/index.xml\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Packages\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Freeze Toggle\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? freeze to stereo;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab frozen track \u8594 ? unfreeze one freeze layer.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The script preserves the original track selection and safely handles mixed selections containing both frozen and unfrozen tracks.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Smart Freeze Toggle\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? measure a safe post-FX tail, then freeze to stereo;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab frozen track \u8594 ? unfreeze one freeze layer.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The silence threshold is set 66 dB below the loudest 50 ms RMS window before the tail, and the final Freeze keeps five continuous seconds of silence.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The script safely handles mixed selections and requires the {\field{\*\fldinst{HYPERLINK "https://www.sws-extension.org/"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 The silence threshold is set 66 dB below the loudest 50 ms RMS window before the tail.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The script requires the {\field{\*\fldinst{HYPERLINK "https://www.sws-extension.org/"}}{\fldrslt{\ul
 SWS/S&M extension
 }}}
 .\par}
@@ -132,9 +125,8 @@ SWS/S&M extension
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles the FX window of the selected track:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab closed window \u8594 ? close all track FX windows, then open its FX chain;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab open window \u8594 ? close all track FX windows.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The script supports normal tracks, the master track, FX chains, floating FX, and empty FX chains.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Toggle Toolbar at Top\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Toggles the toolbar positioned at the top of the main window:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Toggles the toolbar positioned "At top of main window":\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab any current toolbar \u8594 ? the configured target toolbar;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab target toolbar \u8594 ? the previously active toolbar.\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Set {\f1 TARGET_TOOLBAR} in the script to a toolbar number from 1 to 32. The script requires {\field{\*\fldinst{HYPERLINK "https://forum.cockos.com/showthread.php?t=212174"}}{\fldrslt{\ul
