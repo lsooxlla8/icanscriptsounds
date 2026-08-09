@@ -35,6 +35,9 @@ Toggles every selected track independently:
 - unfrozen track → measure a safe post-FX tail, then freeze to stereo;
 - frozen track → unfreeze one freeze layer.
 
+The silence threshold is set 66 dB below the loudest 50 ms RMS window before
+the tail, and the final Freeze keeps five continuous seconds of silence.
+
 The script safely handles mixed selections and requires the
 [SWS/S&M extension](https://www.sws-extension.org/).
 
