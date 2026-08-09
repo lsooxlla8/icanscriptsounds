@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="7ba60ac2f722ab1f859b61e152860e8cfd267a86">
+<index version="1" name="icanscriptsounds" commit="ae5ae20458ce4c1cde59201b77c9a5d0e75c3854">
+  <category name="Toolbars">
+    <reapack name="icss_Toggle Toolbar at Top.lua" type="script" desc="Toggle Toolbar at Top">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Switches any toolbar positioned at the top of the main window to the configured target toolbar, then back to the previous toolbar. Restores the window focus that was active before the script ran.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires js_ReaScriptAPI.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.2.0" author="icanseesounds" time="2026-08-09T12:57:13Z">
+        <changelog><![CDATA[Restore the previously focused window after switching toolbars]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/ae5ae20458ce4c1cde59201b77c9a5d0e75c3854/Toolbars/icss_Toggle%20Toolbar%20at%20Top.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Tracks">
     <reapack name="icss_Freeze Toggle.lua" type="script" desc="Freeze Toggle">
       <metadata>
@@ -71,22 +89,6 @@
       <version name="2.3.0" author="icanseesounds" time="2026-07-28T20:54:11Z">
         <changelog><![CDATA[Initial ReaPack release]]></changelog>
         <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/29bce53a48736855679d483e2996eb0a8344374a/Tracks/icss_Smart%20Toggle%20FX%20Window.lua</source>
-      </version>
-    </reapack>
-    <reapack name="icss_Toggle Toolbar at Top.lua" type="script" desc="Toggle Toolbar at Top">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Switches any toolbar positioned at the top of the main window to the configured target toolbar, then back to the previous toolbar.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Requires js_ReaScriptAPI.\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.1.0" author="icanseesounds" time="2026-08-09T12:30:59Z">
-        <changelog><![CDATA[Initial ReaPack release]]></changelog>
-        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/7ba60ac2f722ab1f859b61e152860e8cfd267a86/Tracks/icss_Toggle%20Toolbar%20at%20Top.lua</source>
       </version>
     </reapack>
   </category>
