@@ -10,6 +10,11 @@ A personal collection of scripts for [REAPER](https://www.reaper.fm/), distribut
 
 ## Packages
 
+### Add Volume Adjustment Automation
+
+Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB,
+shows its automation envelope, and leaves the plug-in window closed.
+
 ### Freeze Toggle
 
 Toggles every selected track independently:
