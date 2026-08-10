@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="e34cb454fafd4f26f76c7234993ca7b692050c26">
+<index version="1" name="icanscriptsounds" commit="dff4584717249854b1bc7b71367af00cedb5a8b4">
   <category name="Toolbars">
     <reapack name="icss_Toggle Toolbar at Top.lua" type="script" desc="Toggle Toolbar at Top">
       <metadata>
@@ -23,6 +23,24 @@
     </reapack>
   </category>
   <category name="Tracks">
+    <reapack name="icss_Add Volume Adjustment Automation.lua" type="script" desc="Add Volume Adjustment Automation">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Adds JS: Volume Adjustment to the selected track.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Sets Adjustment to 0 dB.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Shows the Adjustment automation envelope.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Leaves the plug-in window closed.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0" author="icanseesounds" time="2026-08-10T22:58:28Z">
+        <changelog><![CDATA[Initial version]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/dff4584717249854b1bc7b71367af00cedb5a8b4/Tracks/icss_Add%20Volume%20Adjustment%20Automation.lua</source>
+      </version>
+    </reapack>
     <reapack name="icss_Freeze Toggle.lua" type="script" desc="Freeze Toggle">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -112,6 +130,8 @@ ReaPack
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Install with ReaPack\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://raw.githubusercontent.com/lsooxlla8/icanscriptsounds/main/index.xml\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Packages\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Add Volume Adjustment Automation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB, shows its automation envelope, and leaves the plug-in window closed.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Freeze Toggle\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? freeze to stereo;\par}
