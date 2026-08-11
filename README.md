@@ -15,6 +15,13 @@ A personal collection of scripts for [REAPER](https://www.reaper.fm/), distribut
 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB,
 shows its automation envelope, and leaves the plug-in window closed.
 
+### Prepare Selected Items for Mastering
+
+Arranges selected file-backed items into mastering blocks, creates one colored
+region and Region Render Matrix entry per item, and configures multichannel WAV
+rendering through the master track. Foldered tracks share a start position and
+use separate visible ruler lanes. Requires REAPER 7.78 or later.
+
 ### Freeze Toggle
 
 Toggles every selected track independently:
