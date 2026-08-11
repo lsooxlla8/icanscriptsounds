@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="dff4584717249854b1bc7b71367af00cedb5a8b4">
+<index version="1" name="icanscriptsounds" commit="5ec4a9f3984694282e217a9a32aad58bcb25e2b1">
   <category name="Toolbars">
     <reapack name="icss_Toggle Toolbar at Top.lua" type="script" desc="Toggle Toolbar at Top">
       <metadata>
@@ -68,6 +68,33 @@
         <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/59e0a9842b706632457eea9147c52142ea6313a6/Tracks/icss_Freeze%20Toggle.lua</source>
       </version>
     </reapack>
+    <reapack name="icss_Prepare Selected Items for Mastering.lua" type="script" desc="Prepare Selected Items for Mastering">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Prepares selected file-backed items for batch mastering.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Orders standalone tracks and folder groups from top to bottom.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Aligns selected items in the same nearest folder at one start position.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Places each following block immediately after the longest item before it.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Creates one selected region and render-matrix entry per item.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Renders every item separately through its routing and the master track.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Preserves multichannel sources and enables multichannel peak meters.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Renames regions and item tracks from source filenames.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Deletes existing regions before creating the current region set.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Separates overlapping folder regions into ruler lanes.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Colors tracks with global and per-folder gradients.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Gives each region the custom color of its source track.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires REAPER 7.78 or later.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.2.0" author="icanseesounds" time="2026-08-11T01:30:17Z">
+        <changelog><![CDATA[Initial ReaPack release]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/5ec4a9f3984694282e217a9a32aad58bcb25e2b1/Tracks/icss_Prepare%20Selected%20Items%20for%20Mastering.lua</source>
+      </version>
+    </reapack>
     <reapack name="icss_Smart Freeze Toggle.lua" type="script" desc="Smart Freeze Toggle">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -132,6 +159,8 @@ ReaPack
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Packages\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Add Volume Adjustment Automation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB, shows its automation envelope, and leaves the plug-in window closed.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Prepare Selected Items for Mastering\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Arranges selected file-backed items into mastering blocks, creates one colored region and Region Render Matrix entry per item, and configures multichannel WAV rendering through the master track. Foldered tracks share a start position and use separate visible ruler lanes. Requires REAPER 7.78 or later.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Freeze Toggle\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? freeze to stereo;\par}
