@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="5ec4a9f3984694282e217a9a32aad58bcb25e2b1">
+<index version="1" name="icanscriptsounds" commit="b5d53186455b89900d2e0f443c53eb8aea8829a5">
   <category name="Toolbars">
     <reapack name="icss_Toggle Toolbar at Top.lua" type="script" desc="Toggle Toolbar at Top">
       <metadata>
@@ -141,6 +141,27 @@
       </version>
     </reapack>
   </category>
+  <category name="Tracks/TrackOrganizer">
+    <reapack name="icss_Track Organizer.lua" type="script" desc="icss_Track Organizer">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Classifies and orders tracks from track-order.ini, creates category folders, and places every unclassified track in OTHER at the end. Existing user folders are moved only as balanced atomic subtrees. Set dry_run=true in track-order.ini for a console-only preview.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.3.1" author="icanseesounds" time="2026-08-11T10:36:15Z">
+        <changelog><![CDATA[Initial ReaPack release]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/icss_Track%20Organizer.lua</source>
+        <source main="main" file="icss_Track Organizer Rule Manager.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/icss_Track%20Organizer%20Rule%20Manager.lua</source>
+        <source file="TrackOrganizer_Core.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/TrackOrganizer_Core.lua</source>
+        <source file="track-order.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/track-order.ini</source>
+        <source file="README.md">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/README.md</source>
+      </version>
+    </reapack>
+  </category>
   <metadata>
     <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
@@ -157,6 +178,8 @@ ReaPack
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Install with ReaPack\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://raw.githubusercontent.com/lsooxlla8/icanscriptsounds/main/index.xml\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Packages\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Track Organizer\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Sorts imported multitracks into a stable folder hierarchy using an editable rule library. Includes {\b icss_Track Organizer Rule Manager} for visual rule editing, previews and classification diagnostics. Unmatched tracks are placed in {\f1 OTHER} at the end.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Add Volume Adjustment Automation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB, shows its automation envelope, and leaves the plug-in window closed.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Prepare Selected Items for Mastering\par}
