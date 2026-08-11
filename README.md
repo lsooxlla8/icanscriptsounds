@@ -10,6 +10,13 @@ A personal collection of scripts for [REAPER](https://www.reaper.fm/), distribut
 
 ## Packages
 
+### Track Organizer
+
+Sorts imported multitracks into a stable folder hierarchy using an editable
+rule library. Includes **icss_Track Organizer Rule Manager** for visual rule
+editing, previews and classification diagnostics. Unmatched tracks are placed
+in `OTHER` at the end.
+
 ### Add Volume Adjustment Automation
 
 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB,
