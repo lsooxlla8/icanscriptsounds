@@ -1,3 +1,5 @@
+-- @noindex
+
 local script_path = assert(arg[1], "Organizer script path is required")
 local core_path = assert(arg[2], "Core script path is required")
 local auto_adjust_closures = arg[3] == "auto"

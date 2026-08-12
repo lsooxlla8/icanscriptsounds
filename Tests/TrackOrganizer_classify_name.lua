@@ -1,3 +1,5 @@
+-- @noindex
+
 local core_path = assert(arg[1], "Core path is required")
 local config_path = assert(arg[2], "Config path is required")
 local track_name = assert(arg[3], "Track name is required")

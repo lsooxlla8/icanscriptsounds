@@ -1,3 +1,5 @@
+-- @noindex
+
 local core_path = assert(arg[1], "Core script path is required")
 local config_path = assert(arg[2], "Config path is required")
 local Core = dofile(core_path)

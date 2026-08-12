@@ -1,3 +1,5 @@
+-- @noindex
+
 for _, path in ipairs(arg) do
   local chunk, error_message = loadfile(path)
   assert(chunk, path .. ": " .. tostring(error_message))

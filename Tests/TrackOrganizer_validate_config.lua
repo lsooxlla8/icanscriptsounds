@@ -1,3 +1,5 @@
+-- @noindex
+
 local core_path = assert(arg[1], "Core path is required")
 local Core = dofile(core_path)
 
