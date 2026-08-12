@@ -1,16 +1,17 @@
 -- @description Prepare Selected Items for Mastering
 -- @author icanseesounds
--- @version 1.2.0
+-- @version 1.3.0
 -- @changelog
---   Initial ReaPack release
+--   Treat multiple selected items on one track as one mastering block
 -- @about
 --   Prepares selected file-backed items for batch mastering.
 --
 --   * Orders standalone tracks and folder groups from top to bottom.
 --   * Aligns selected items in the same nearest folder at one start position.
 --   * Places each following block immediately after the longest item before it.
---   * Creates one selected region and render-matrix entry per item.
---   * Renders every item separately through its routing and the master track.
+--   * Treats multiple selected items on one track as one continuous block.
+--   * Creates one selected region and render-matrix entry per selected track.
+--   * Renders every selected track separately through its routing and master.
 --   * Preserves multichannel sources and enables multichannel peak meters.
 --   * Renames regions and item tracks from source filenames.
 --   * Deletes existing regions before creating the current region set.
@@ -221,7 +222,7 @@ local function collect_selected_items(track_metadata)
   end
 
   local items = {}
-  local tracks_with_items = {}
+  local blocks_by_track = {}
   local anchor_position
 
   for index = 0, item_count - 1 do
@@ -232,11 +233,6 @@ local function collect_selected_items(track_metadata)
     if not metadata then
       return nil, "Could not resolve a selected item's track."
     end
-
-    if tracks_with_items[track] then
-      return nil, "Select no more than one item on each track."
-    end
-    tracks_with_items[track] = true
 
     local lock_flags = reaper.GetMediaItemInfo_Value(item, "C_LOCK")
     if has_flag(lock_flags, 1) then
@@ -279,31 +275,60 @@ local function collect_selected_items(track_metadata)
     local track_channels = math.floor(
       reaper.GetMediaTrackInfo_Value(track, "I_NCHAN")
     )
-    local render_channels = math.max(
-      2,
-      source_channels,
-      track_channels
-    )
+    local block = blocks_by_track[track]
+    if not block then
+      local nearest_parent = metadata.parents[#metadata.parents]
+      local group_key = track
+      if not metadata.is_folder and nearest_parent then
+        group_key = nearest_parent
+      end
 
-    local nearest_parent = metadata.parents[#metadata.parents]
-    local group_key = track
-    if not metadata.is_folder and nearest_parent then
-      group_key = nearest_parent
+      block = {
+        selected_items = {},
+        track = track,
+        track_index = metadata.index,
+        parents = metadata.parents,
+        group_key = group_key,
+        position = position,
+        end_position = position + length,
+        naming_position = position,
+        base_name = base_name,
+        render_channels = math.max(
+          2,
+          source_channels,
+          track_channels
+        ),
+      }
+      blocks_by_track[track] = block
+      items[#items + 1] = block
+    else
+      block.position = math.min(block.position, position)
+      block.end_position = math.max(
+        block.end_position,
+        position + length
+      )
+      block.render_channels = math.max(
+        block.render_channels,
+        source_channels,
+        track_channels
+      )
+
+      if position < block.naming_position then
+        block.naming_position = position
+        block.base_name = base_name
+      end
     end
 
-    items[#items + 1] = {
+    block.selected_items[#block.selected_items + 1] = {
       item = item,
-      track = track,
-      track_index = metadata.index,
-      parents = metadata.parents,
-      group_key = group_key,
       position = position,
-      length = length,
-      base_name = base_name,
-      render_channels = render_channels,
     }
 
     anchor_position = math.min(anchor_position or position, position)
+  end
+
+  for _, block in ipairs(items) do
+    block.length = block.end_position - block.position
   end
 
   table.sort(items, function(left, right)
@@ -311,6 +336,16 @@ local function collect_selected_items(track_metadata)
   end)
 
   return items, nil, anchor_position
+end
+
+local function move_track_block(block, new_position)
+  for _, selected_item in ipairs(block.selected_items) do
+    reaper.SetMediaItemPosition(
+      selected_item.item,
+      new_position + selected_item.position - block.position,
+      false
+    )
+  end
 end
 
 local function build_groups(items)
@@ -669,11 +704,7 @@ local function main()
 
   for _, group in ipairs(groups) do
     for lane_index, item_data in ipairs(group.items) do
-      reaper.SetMediaItemPosition(
-        item_data.item,
-        group.position,
-        false
-      )
+      move_track_block(item_data, group.position)
 
       reaper.GetSetMediaTrackInfo_String(
         item_data.track,
