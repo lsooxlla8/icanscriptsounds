@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="b5d53186455b89900d2e0f443c53eb8aea8829a5">
+<index version="1" name="icanscriptsounds" commit="058092ffac765d4241d36a56c52930eb99ddd940">
   <category name="Toolbars">
     <reapack name="icss_Toggle Toolbar at Top.lua" type="script" desc="Toggle Toolbar at Top">
       <metadata>
@@ -148,7 +148,7 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Classifies and orders tracks from track-order.ini, creates category folders, and places every unclassified track in OTHER at the end. Existing user folders are moved only as balanced atomic subtrees. Set dry_run=true in track-order.ini for a console-only preview.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Classifies and orders tracks from the active preset, creates category folders, and places every unclassified track in OTHER at the end. Existing user folders are moved only as balanced atomic subtrees. Set dry_run=true in the active preset for a console-only preview.\par}
 }
 ]]></description>
       </metadata>
@@ -159,6 +159,26 @@
         <source file="TrackOrganizer_Core.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/TrackOrganizer_Core.lua</source>
         <source file="track-order.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/track-order.ini</source>
         <source file="README.md">https://github.com/lsooxlla8/icanscriptsounds/raw/b5d53186455b89900d2e0f443c53eb8aea8829a5/Tracks/TrackOrganizer/README.md</source>
+      </version>
+      <version name="2.1.0" author="icanseesounds" time="2026-08-12T17:27:22Z">
+        <changelog><![CDATA[Add five presets, direct actions, ordering rules, and virtual order groups
+Add named actions and recoverable deletion for user-created presets
+Improve repeat-run folder safety, natural sorting, and Rule Manager usability
+Use the current Music Mixing rule library as the factory default]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/icss_Track%20Organizer.lua</source>
+        <source main="main" file="icss_Track Organizer Rule Manager.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/icss_Track%20Organizer%20Rule%20Manager.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 1.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%201.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 2.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%202.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 3.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%203.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 4.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%204.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 5.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%205.lua</source>
+        <source file="TrackOrganizer_Core.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/TrackOrganizer_Core.lua</source>
+        <source file="Factory Presets/01 Music Mixing.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/track-order.ini</source>
+        <source file="Factory Presets/02 Film Post.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/Factory%20Presets/02%20Film%20Post.ini</source>
+        <source file="Factory Presets/03 Sound Design.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/Factory%20Presets/03%20Sound%20Design.ini</source>
+        <source file="Factory Presets/04 Podcast.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/Factory%20Presets/04%20Podcast.ini</source>
+        <source file="Factory Presets/05 Audiobook.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/Factory%20Presets/05%20Audiobook.ini</source>
+        <source file="README.md">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/README.md</source>
       </version>
     </reapack>
   </category>
@@ -179,7 +199,7 @@ ReaPack
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://raw.githubusercontent.com/lsooxlla8/icanscriptsounds/main/index.xml\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Packages\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Track Organizer\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Sorts imported multitracks into a stable folder hierarchy using an editable rule library. Includes {\b icss_Track Organizer Rule Manager} for visual rule editing, previews and classification diagnostics. Unmatched tracks are placed in {\f1 OTHER} at the end.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Sorts imported multitracks into a stable folder hierarchy using an editable rule library. Includes five workflow presets, direct preset actions and {\b icss_Track Organizer Rule Manager} for visual editing, ordering, previews and classification diagnostics. Unmatched tracks are placed in {\f1 OTHER} at the end.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Add Volume Adjustment Automation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB, shows its automation envelope, and leaves the plug-in window closed.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Prepare Selected Items for Mastering\par}
