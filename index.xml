@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="611cb228439a88b31c6ebfb061a5bc65163381d6">
+<index version="1" name="icanscriptsounds" commit="13cf445128269543689fd9a385666db207125d2b">
+  <category name="Items">
+    <reapack name="icss_Duplicate to New Copy of a Track and Move to 0.00.lua" type="script" desc="New Track Copies">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Provides three actions for placing selected material on new copies of its source tracks.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Duplicate to New Copy of a Track and Move to 0.00 copies the material and shifts the result so its earliest point is at 0.00.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Duplicate to New Copy of a Track copies the material at its original timeline position.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Move to New Copy of a Track moves the original material at its original timeline position.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Razor Edits take priority over selected media items. Media-item Razor Edits process only material inside their boundaries; envelope Razor Edits are ignored. Without Razor Edits, selected items are processed in full.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab New tracks keep the source track settings and use minimum height.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0" author="icanseesounds" time="2026-08-20T09:51:09Z">
+        <changelog><![CDATA[Initial version]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/13cf445128269543689fd9a385666db207125d2b/Items/icss_Duplicate%20to%20New%20Copy%20of%20a%20Track%20and%20Move%20to%200.00.lua</source>
+        <source main="main" file="icss_Duplicate to New Copy of a Track.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/13cf445128269543689fd9a385666db207125d2b/Items/icss_Duplicate%20to%20New%20Copy%20of%20a%20Track.lua</source>
+        <source main="main" file="icss_Move to New Copy of a Track.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/13cf445128269543689fd9a385666db207125d2b/Items/icss_Move%20to%20New%20Copy%20of%20a%20Track.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Toolbars">
     <reapack name="icss_Toggle Toolbar at Top.lua" type="script" desc="Toggle Toolbar at Top">
       <metadata>
@@ -203,17 +227,21 @@ ReaPack
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Install with ReaPack\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://raw.githubusercontent.com/lsooxlla8/icanscriptsounds/main/index.xml\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Packages\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Track Organizer\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Sorts imported multitracks into a stable folder hierarchy using an editable rule library. Includes five workflow presets, direct preset actions and {\b icss_Track Organizer Rule Manager} for visual editing, ordering, previews and classification diagnostics. Unmatched tracks are placed in {\f1 OTHER} at the end.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Add Volume Adjustment Automation\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB, shows its automation envelope, and leaves the plug-in window closed.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Prepare Selected Items for Mastering\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Items\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 New Track Copies\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Duplicate to New Copy of a Track and Move to 0.00} \u8212- copies selected items or media-item Razor Edit material to new copies of their source tracks, then shifts the result so its earliest point is at 0.00.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Duplicate to New Copy of a Track} \u8212- copies selected items or media-item Razor Edit material to new copies of their source tracks at the original timeline position.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Move to New Copy of a Track} \u8212- moves selected items or media-item Razor Edit material to new copies of their source tracks at the original timeline position.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Prepare Selected Items for Mastering\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Arranges selected file-backed items into mastering blocks, creates one colored region and Region Render Matrix entry per item, and configures multichannel WAV rendering through the master track. Foldered tracks share a start position and use separate visible ruler lanes. Requires REAPER 7.78 or later.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Freeze Toggle\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Track Management\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Track Organizer\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Sorts imported multitracks into a stable folder hierarchy using an editable rule library. Includes five workflow presets, direct preset actions and {\b icss_Track Organizer Rule Manager} for visual editing, ordering, previews and classification diagnostics. Unmatched tracks are placed in {\f1 OTHER} at the end.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Freeze Toggle\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? freeze to stereo;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab frozen track \u8594 ? unfreeze one freeze layer.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Smart Freeze Toggle\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Smart Freeze Toggle\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? measure a safe post-FX tail, then freeze to stereo;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab frozen track \u8594 ? unfreeze one freeze layer.\sa180\par}
@@ -222,11 +250,15 @@ ReaPack
 SWS/S&M extension
 }}}
 .\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Smart Toggle FX Window\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 FX and Automation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Add Volume Adjustment Automation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Adds JS: Volume Adjustment to the selected track, sets Adjustment to 0 dB, shows its automation envelope, and leaves the plug-in window closed.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Smart Toggle FX Window\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles the FX window of the selected track:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab closed window \u8594 ? close all track FX windows, then open its FX chain;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab open window \u8594 ? close all track FX windows.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Toggle Toolbar at Top\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Toolbars\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Toggle Toolbar at Top\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Toggles the toolbar positioned "At top of main window":\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab any current toolbar \u8594 ? the configured target toolbar;\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab target toolbar \u8594 ? the previously active toolbar.\sa180\par}
