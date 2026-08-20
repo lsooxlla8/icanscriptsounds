@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="650796a6cb52218d7bf7aa766e46593a8a3a19f2">
+<index version="1" name="icanscriptsounds" commit="5ad2b7d1e879398a8e95feb6c0dd5e10718d6660">
   <category name="Items">
     <reapack name="icss_Duplicate to New Copy of a Track and Move to 0.00.lua" type="script" desc="New Track Copies">
       <metadata>
@@ -97,17 +97,16 @@
         <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/dff4584717249854b1bc7b71367af00cedb5a8b4/Tracks/icss_Add%20Volume%20Adjustment%20Automation.lua</source>
       </version>
     </reapack>
-    <reapack name="icss_Freeze Toggle.lua" type="script" desc="Freeze Toggle">
+    <reapack name="icss_Freeze Toggle.lua" type="script" desc="Freeze Toggles">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Toggles the freeze state of every selected track.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Unfrozen track: freeze to stereo.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Frozen track: unfreeze one freeze layer.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mixed multi-track selections are processed independently.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The original track selection is restored afterwards.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Provides two actions that toggle every selected track independently.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Freeze Toggle freezes an unfrozen track to stereo or unfreezes one freeze layer from a frozen track.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Smart Freeze Toggle measures a safe post-FX tail before freezing an unfrozen track, or unfreezes one freeze layer from a frozen track.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Smart Freeze Toggle requires the free SWS/S&M extension.\par}
 }
 ]]></description>
       </metadata>
@@ -123,32 +122,10 @@
         <changelog><![CDATA[Update the ReaPack author name]]></changelog>
         <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/59e0a9842b706632457eea9147c52142ea6313a6/Tracks/icss_Freeze%20Toggle.lua</source>
       </version>
-    </reapack>
-    <reapack name="icss_Smart Freeze Toggle.lua" type="script" desc="Smart Freeze Toggle">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Toggles the freeze state of every selected track.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Unfrozen track: measures the real frozen output, then freezes natively with five seconds of confirmed silence after the audible tail.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Frozen track: unfreezes one freeze layer.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mixed multi-track selections are processed independently.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Requires the free SWS/S&M extension.\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.0.0" author="icanseesounds" time="2026-07-27T13:30:13Z">
-        <changelog><![CDATA[Initial release]]></changelog>
-        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/1338645fc49f8733beda9b302cd6ab358ad29b9b/Tracks/icss_Smart%20Freeze%20Toggle.lua</source>
-      </version>
-      <version name="1.0.1" author="icanseesounds" time="2026-07-28T20:54:11Z">
-        <changelog><![CDATA[Simplify the ReaPack description]]></changelog>
-        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/29bce53a48736855679d483e2996eb0a8344374a/Tracks/icss_Smart%20Freeze%20Toggle.lua</source>
-      </version>
-      <version name="2.1.0" author="icanseesounds" time="2026-08-09T12:17:34Z">
-        <changelog><![CDATA[Set silence 66 dB below the loudest pre-tail 50 ms RMS window]]></changelog>
-        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/f87d722439638cffd39ca28c0388f8851c363f6e/Tracks/icss_Smart%20Freeze%20Toggle.lua</source>
+      <version name="3.0.0" author="icanseesounds" time="2026-08-20T10:20:51Z">
+        <changelog><![CDATA[Bundle Freeze Toggle and Smart Freeze Toggle as one ReaPack package]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/5ad2b7d1e879398a8e95feb6c0dd5e10718d6660/Tracks/icss_Freeze%20Toggle.lua</source>
+        <source main="main" file="icss_Smart Freeze Toggle.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/5ad2b7d1e879398a8e95feb6c0dd5e10718d6660/Tracks/icss_Smart%20Freeze%20Toggle.lua</source>
       </version>
     </reapack>
     <reapack name="icss_Smart Toggle FX Window.lua" type="script" desc="Smart Toggle FX Window">
