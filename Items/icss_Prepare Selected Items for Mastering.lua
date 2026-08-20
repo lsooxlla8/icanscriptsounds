@@ -1,10 +1,10 @@
 -- @description Prepare Selected Items for Mastering
 -- @author icanseesounds
--- @version 1.3.0
+-- @version 1.4.0
 -- @changelog
---   Treat multiple selected items on one track as one mastering block
+--   Support MIDI, generated-source, and empty selected items
 -- @about
---   Prepares selected file-backed items for batch mastering.
+--   Prepares selected items for batch mastering.
 --
 --   * Orders standalone tracks and folder groups from top to bottom.
 --   * Aligns selected items in the same nearest folder at one start position.
@@ -13,7 +13,7 @@
 --   * Creates one selected region and render-matrix entry per selected track.
 --   * Renders every selected track separately through its routing and master.
 --   * Preserves multichannel sources and enables multichannel peak meters.
---   * Renames regions and item tracks from source filenames.
+--   * Renames regions and item tracks from the best available item name.
 --   * Deletes existing regions before creating the current region set.
 --   * Separates overlapping folder regions into ruler lanes.
 --   * Colors tracks with global and per-folder gradients.
@@ -55,6 +55,60 @@ local function clean_filename(path)
   name = name:gsub("%s+", " ")
   name = name:match("^%s*(.-)%s*$") or ""
   return name
+end
+
+local function clean_name(value)
+  value = tostring(value or "")
+  value = value:gsub("%s+", " ")
+  return value:match("^%s*(.-)%s*$") or ""
+end
+
+local function get_track_name(track)
+  local _, name = reaper.GetTrackName(track)
+  return clean_name(name)
+end
+
+local function get_item_name(item, take, source, track, item_number)
+  if source then
+    local source_path = reaper.GetMediaSourceFileName(source)
+    if source_path and source_path ~= "" then
+      local source_name = clean_filename(source_path)
+      if source_name ~= "" then
+        return source_name
+      end
+    end
+  end
+
+  if take then
+    local _, take_name = reaper.GetSetMediaItemTakeInfo_String(
+      take,
+      "P_NAME",
+      "",
+      false
+    )
+    take_name = clean_name(take_name)
+    if take_name ~= "" then
+      return take_name
+    end
+  end
+
+  local _, item_notes = reaper.GetSetMediaItemInfo_String(
+    item,
+    "P_NOTES",
+    "",
+    false
+  )
+  item_notes = clean_name(item_notes)
+  if item_notes ~= "" then
+    return item_notes
+  end
+
+  local track_name = get_track_name(track)
+  if track_name ~= "" then
+    return track_name
+  end
+
+  return "Item " .. tostring(item_number)
 end
 
 local function get_root_source(take)
@@ -218,7 +272,7 @@ end
 local function collect_selected_items(track_metadata)
   local item_count = reaper.CountSelectedMediaItems(0)
   if item_count == 0 then
-    return nil, "Select at least one media item."
+    return nil, "Select at least one item."
   end
 
   local items = {}
@@ -240,24 +294,14 @@ local function collect_selected_items(track_metadata)
     end
 
     local take = reaper.GetActiveTake(item)
-    if not take then
-      return nil, "Every selected item must have an active take."
-    end
-
-    local source = get_root_source(take)
-    if not source then
-      return nil, "Could not read a selected item's media source."
-    end
-
-    local source_path = reaper.GetMediaSourceFileName(source)
-    if source_path == "" then
-      return nil, "Every selected item must use a file-backed media source."
-    end
-
-    local base_name = clean_filename(source_path)
-    if base_name == "" then
-      return nil, "Could not derive a name from a selected source file."
-    end
+    local source = take and get_root_source(take) or nil
+    local base_name = get_item_name(
+      item,
+      take,
+      source,
+      track,
+      index + 1
+    )
 
     local position = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
     local length = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
@@ -265,12 +309,10 @@ local function collect_selected_items(track_metadata)
       return nil, "Every selected item must have a positive length."
     end
 
-    local source_channels = math.floor(
-      reaper.GetMediaSourceNumChannels(source)
-    )
-    if source_channels < 1 then
-      return nil, "Every selected item must use an audio source."
-    end
+    local source_channels = source and math.max(
+      0,
+      math.floor(tonumber(reaper.GetMediaSourceNumChannels(source)) or 0)
+    ) or 0
 
     local track_channels = math.floor(
       reaper.GetMediaTrackInfo_Value(track, "I_NCHAN")

@@ -4,6 +4,14 @@ local core_path = assert(arg[1], "Core script path is required")
 local config_path = assert(arg[2], "Config path is required")
 local Core = dofile(core_path)
 
+assert(
+  not Core.compare_nodes(
+    { id = "dynamic" },
+    { id = "configured", order_path = { 1 } }
+  ),
+  "Nodes without an order path must defer instead of crashing"
+)
+
 local config, errors, validation = Core.load_config(config_path)
 assert(config, table.concat(errors or {}, "\n"))
 assert(validation.ok)

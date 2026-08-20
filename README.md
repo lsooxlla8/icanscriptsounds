@@ -20,10 +20,11 @@ A personal collection of scripts for [REAPER](https://www.reaper.fm/), distribut
 
 #### Prepare Selected Items for Mastering
 
-Arranges selected file-backed items into mastering blocks, creates one colored
-region and Region Render Matrix entry per item, and configures multichannel WAV
-rendering through the master track. Foldered tracks share a start position and
-use separate visible ruler lanes. Requires REAPER 7.78 or later.
+Arranges selected items into mastering blocks, creates one colored region and
+Region Render Matrix entry per selected track, and configures multichannel WAV
+rendering through the master track. Audio, MIDI, generated-source and empty
+items are supported. Foldered tracks share a start position and use separate
+visible ruler lanes. Requires REAPER 7.78 or later.
 
 ### Track Management
 
@@ -35,24 +36,12 @@ rule library. Includes five workflow presets, direct preset actions and
 and classification diagnostics. Unmatched tracks are placed in `OTHER` at the
 end.
 
-#### Freeze Toggle
+#### Freeze Toggles
 
-Toggles every selected track independently:
+- **Freeze Toggle** — toggles every selected track independently: an unfrozen track is frozen to stereo; a frozen track is unfrozen by one freeze layer.
+- **Smart Freeze Toggle** — toggles every selected track independently: an unfrozen track gets a measured safe post-FX tail and is then frozen to stereo; a frozen track is unfrozen by one freeze layer. The silence threshold is set 66 dB below the loudest 50 ms RMS window before the tail.
 
-- unfrozen track → freeze to stereo;
-- frozen track → unfreeze one freeze layer.
-
-#### Smart Freeze Toggle
-
-Toggles every selected track independently:
-
-- unfrozen track → measure a safe post-FX tail, then freeze to stereo;
-- frozen track → unfreeze one freeze layer.
-
-The silence threshold is set 66 dB below the loudest 50 ms RMS window before
-the tail.
-
-The script requires the
+**Smart Freeze Toggle** requires the
 [SWS/S&M extension](https://www.sws-extension.org/).
 
 ### FX and Automation
