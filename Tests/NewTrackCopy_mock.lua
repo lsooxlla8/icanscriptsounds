@@ -1,3 +1,5 @@
+-- @noindex
+
 local script_to_test = assert(arg[1], "Pass the script path to test")
 local scenario = assert(arg[2], "Pass the test scenario")
 
