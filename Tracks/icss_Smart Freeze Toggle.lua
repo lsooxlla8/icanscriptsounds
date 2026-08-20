@@ -1,4 +1,5 @@
 -- @description Smart Freeze Toggle
+-- @noindex
 -- @author icanseesounds
 -- @version 2.1.0
 -- @changelog

@@ -1,15 +1,19 @@
--- @description Freeze Toggle
+-- @description Freeze Toggles
 -- @author icanseesounds
--- @version 1.0.2
+-- @version 3.0.0
 -- @changelog
---   Update the ReaPack author name
+--   Bundle Freeze Toggle and Smart Freeze Toggle as one ReaPack package
+-- @provides
+--   [main] icss_Smart Freeze Toggle.lua
 -- @about
---   Toggles the freeze state of every selected track.
+--   Provides two actions that toggle every selected track independently.
 --
---   * Unfrozen track: freeze to stereo.
---   * Frozen track: unfreeze one freeze layer.
---   * Mixed multi-track selections are processed independently.
---   * The original track selection is restored afterwards.
+--   * Freeze Toggle freezes an unfrozen track to stereo or unfreezes one
+--     freeze layer from a frozen track.
+--   * Smart Freeze Toggle measures a safe post-FX tail before freezing an
+--     unfrozen track, or unfreezes one freeze layer from a frozen track.
+--
+--   Smart Freeze Toggle requires the free SWS/S&M extension.
 
 local CMD_FREEZE_TO_STEREO = 41223
 local CMD_UNFREEZE_TRACKS = 41644
