@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="icanscriptsounds" commit="b2b80a245f6a734793b082b522ecd08898e364f8">
+<index version="1" name="icanscriptsounds" commit="650796a6cb52218d7bf7aa766e46593a8a3a19f2">
   <category name="Items">
     <reapack name="icss_Duplicate to New Copy of a Track and Move to 0.00.lua" type="script" desc="New Track Copies">
       <metadata>
@@ -29,7 +29,7 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Prepares selected file-backed items for batch mastering.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Prepares selected items for batch mastering.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Orders standalone tracks and folder groups from top to bottom.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Aligns selected items in the same nearest folder at one start position.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Places each following block immediately after the longest item before it.\par}
@@ -37,7 +37,7 @@
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Creates one selected region and render-matrix entry per selected track.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Renders every selected track separately through its routing and master.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Preserves multichannel sources and enables multichannel peak meters.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Renames regions and item tracks from source filenames.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Renames regions and item tracks from the best available item name.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Deletes existing regions before creating the current region set.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Separates overlapping folder regions into ruler lanes.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Colors tracks with global and per-folder gradients.\par}
@@ -49,6 +49,10 @@
       <version name="1.3.0" author="icanseesounds" time="2026-08-20T09:59:17Z">
         <changelog><![CDATA[Treat multiple selected items on one track as one mastering block]]></changelog>
         <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/b2b80a245f6a734793b082b522ecd08898e364f8/Items/icss_Prepare%20Selected%20Items%20for%20Mastering.lua</source>
+      </version>
+      <version name="1.4.0" author="icanseesounds" time="2026-08-20T10:11:46Z">
+        <changelog><![CDATA[Support MIDI, generated-source, and empty selected items]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Items/icss_Prepare%20Selected%20Items%20for%20Mastering.lua</source>
       </version>
     </reapack>
   </category>
@@ -205,6 +209,23 @@ Use the current Music Mixing rule library as the factory default]]></changelog>
         <source file="Factory Presets/05 Audiobook.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/Factory%20Presets/05%20Audiobook.ini</source>
         <source file="README.md">https://github.com/lsooxlla8/icanscriptsounds/raw/058092ffac765d4241d36a56c52930eb99ddd940/Tracks/TrackOrganizer/README.md</source>
       </version>
+      <version name="2.1.1" author="icanseesounds" time="2026-08-20T10:11:46Z">
+        <changelog><![CDATA[Fix automatic numbered folders for unclassified tracks]]></changelog>
+        <source main="main">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/icss_Track%20Organizer.lua</source>
+        <source main="main" file="icss_Track Organizer Rule Manager.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/icss_Track%20Organizer%20Rule%20Manager.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 1.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%201.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 2.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%202.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 3.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%203.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 4.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%204.lua</source>
+        <source main="main" file="icss_Track Organizer - Preset 5.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/icss_Track%20Organizer%20-%20Preset%205.lua</source>
+        <source file="TrackOrganizer_Core.lua">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/TrackOrganizer_Core.lua</source>
+        <source file="Factory Presets/01 Music Mixing.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/track-order.ini</source>
+        <source file="Factory Presets/02 Film Post.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/Factory%20Presets/02%20Film%20Post.ini</source>
+        <source file="Factory Presets/03 Sound Design.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/Factory%20Presets/03%20Sound%20Design.ini</source>
+        <source file="Factory Presets/04 Podcast.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/Factory%20Presets/04%20Podcast.ini</source>
+        <source file="Factory Presets/05 Audiobook.ini">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/Factory%20Presets/05%20Audiobook.ini</source>
+        <source file="README.md">https://github.com/lsooxlla8/icanscriptsounds/raw/650796a6cb52218d7bf7aa766e46593a8a3a19f2/Tracks/TrackOrganizer/README.md</source>
+      </version>
     </reapack>
   </category>
   <metadata>
@@ -229,20 +250,14 @@ ReaPack
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Duplicate to New Copy of a Track} \u8212- copies selected items or media-item Razor Edit material to new copies of their source tracks at the original timeline position.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Move to New Copy of a Track} \u8212- moves selected items or media-item Razor Edit material to new copies of their source tracks at the original timeline position.\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Prepare Selected Items for Mastering\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Arranges selected file-backed items into mastering blocks, creates one colored region and Region Render Matrix entry per item, and configures multichannel WAV rendering through the master track. Foldered tracks share a start position and use separate visible ruler lanes. Requires REAPER 7.78 or later.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Arranges selected items into mastering blocks, creates one colored region and Region Render Matrix entry per selected track, and configures multichannel WAV rendering through the master track. Audio, MIDI, generated-source and empty items are supported. Foldered tracks share a start position and use separate visible ruler lanes. Requires REAPER 7.78 or later.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Track Management\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Track Organizer\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Sorts imported multitracks into a stable folder hierarchy using an editable rule library. Includes five workflow presets, direct preset actions and {\b icss_Track Organizer Rule Manager} for visual editing, ordering, previews and classification diagnostics. Unmatched tracks are placed in {\f1 OTHER} at the end.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Freeze Toggle\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? freeze to stereo;\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab frozen track \u8594 ? unfreeze one freeze layer.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Smart Freeze Toggle\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Toggles every selected track independently:\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab unfrozen track \u8594 ? measure a safe post-FX tail, then freeze to stereo;\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab frozen track \u8594 ? unfreeze one freeze layer.\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The silence threshold is set 66 dB below the loudest 50 ms RMS window before the tail.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The script requires the {\field{\*\fldinst{HYPERLINK "https://www.sws-extension.org/"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 Freeze Toggles\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Freeze Toggle} \u8212- toggles every selected track independently: an unfrozen track is frozen to stereo; a frozen track is unfrozen by one freeze layer.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Smart Freeze Toggle} \u8212- toggles every selected track independently: an unfrozen track gets a measured safe post-FX tail and is then frozen to stereo; a frozen track is unfrozen by one freeze layer. The silence threshold is set 66 dB below the loudest 50 ms RMS window before the tail.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Smart Freeze Toggle} requires the {\field{\*\fldinst{HYPERLINK "https://www.sws-extension.org/"}}{\fldrslt{\ul
 SWS/S&M extension
 }}}
 .\par}
