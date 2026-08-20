@@ -1,11 +1,8 @@
 -- @description icss_Track Organizer
 -- @author icanseesounds
--- @version 2.1.0
+-- @version 2.1.1
 -- @changelog
---   Add five presets, direct actions, ordering rules, and virtual order groups
---   Add named actions and recoverable deletion for user-created presets
---   Improve repeat-run folder safety, natural sorting, and Rule Manager usability
---   Use the current Music Mixing rule library as the factory default
+--   Fix automatic numbered folders for unclassified tracks
 -- @provides
 --   [main] icss_Track Organizer Rule Manager.lua
 --   [main] icss_Track Organizer - Preset 1.lua
@@ -1363,8 +1360,16 @@ if not ok then
   reaper.Undo_DoUndo2(0)
   reaper.TrackList_AdjustWindows(false)
   reaper.UpdateArrange()
+  local full_error = tostring(error_message)
+  local short_error = full_error:match("^[^\r\n]+") or full_error
+  if reaper.ShowConsoleMsg then
+    reaper.ShowConsoleMsg(
+      "\nicss_Track Organizer error:\n" .. full_error .. "\n"
+    )
+  end
   show_error(
     "Organizer stopped and rolled back the project:\n\n"
-    .. tostring(error_message)
+    .. short_error
+    .. "\n\nThe complete diagnostic was written to the ReaScript Console."
   )
 end

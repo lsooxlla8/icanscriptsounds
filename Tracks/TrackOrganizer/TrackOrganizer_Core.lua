@@ -4,7 +4,7 @@
 
 local M = {}
 
-M.VERSION = "2.1.0"
+M.VERSION = "2.1.1"
 
 local DEFAULT_SETTINGS = {
   create_folders = true,
@@ -894,6 +894,9 @@ function M.load_config(path)
 end
 
 local function order_path_less(first, second)
+  if type(first) ~= "table" or type(second) ~= "table" then
+    return false
+  end
   local count = math.max(#first, #second)
   for index = 1, count do
     local first_value = first[index] or -1
@@ -906,6 +909,9 @@ local function order_path_less(first, second)
 end
 
 function M.compare_nodes(first, second)
+  if type(first) ~= "table" or type(second) ~= "table" then
+    return false
+  end
   return order_path_less(first.order_path, second.order_path)
 end
 
